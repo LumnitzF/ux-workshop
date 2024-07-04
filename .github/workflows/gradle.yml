@@ -46,6 +46,17 @@ jobs:
     #
     # - name: Build with Gradle 8.5
     #   run: gradle build
+    - name: Teamscale Upload
+      uses: cqse/teamscale-upload-action@v2.9.2
+      with:
+        server: 'https://g2.teamscale.dev'
+        project: 'ux-workshop'
+        user: 'build'
+        partition: 'Github Action > Linux Branch And Timestamp'
+        accesskey: ${{ secrets.TEAMSCALE_ACCESS_KEY }}
+        format: 'JACOCO'
+        message: 'JaCoCo coverage upload'
+        files: 'build/reports/jacoco/test/jacocoTestReport.xml'
 
   dependency-submission:
 
