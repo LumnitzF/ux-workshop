@@ -52,7 +52,7 @@ jobs:
         server: 'https://g2.teamscale.dev'
         project: 'ux-workshop'
         user: 'build'
-        partition: 'Github Action > Linux Branch And Timestamp'
+        partition: 'Github Build Action'
         accesskey: ${{ secrets.TEAMSCALE_ACCESS_KEY }}
         format: 'JACOCO'
         message: 'JaCoCo coverage upload'
